@@ -8,6 +8,7 @@
   --color-grey: #F2F0EA;       /* Refinement — backgrounds */
   --color-dark: #3A332E;       /* Dark text, deep contrast */
   --color-white: #FFFFFF;
+  --color-muted: rgba(58, 51, 46, 0.75); /* Secondary/muted text */
 
   /* Typography */
   --font-heading: 'Montserrat', sans-serif;
@@ -28,6 +29,7 @@
   --color-grey: #2A2622;
   --color-white: #1E1B18;
   --color-dark: #F2F0EA;
+  --color-muted: rgba(242, 240, 234, 0.7);
 }
 
 [data-theme="dark"] .project-card {
@@ -188,7 +190,7 @@ section {
 .hero .tagline {
   margin: var(--space-md) auto var(--space-lg);
   max-width: 500px;
-  color: rgba(58, 51, 46, 0.75);
+  color: var(--color-muted);
 }
 
 .cta-button {
@@ -263,7 +265,7 @@ section {
 
 .project-card p {
   margin-bottom: var(--space-md);
-  color: rgba(58, 51, 46, 0.8);
+  color: var(--color-muted);
 }
 
 .project-link {
