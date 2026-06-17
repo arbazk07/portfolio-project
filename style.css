@@ -86,3 +86,276 @@ section {
   max-width: var(--max-width);
   margin: 0 auto;
 }
+
+/* ===========================
+   3. HEADER & NAV (Flexbox)
+   =========================== */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-grey);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--color-dark);
+}
+
+/* Hamburger button — visible on mobile only */
+.nav-toggle {
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  color: var(--color-dark);
+  display: block;
+}
+
+/* Mobile nav: hidden by default, drops down when toggled open */
+.main-nav {
+  display: none;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--color-grey);
+}
+
+.main-nav.open {
+  display: block;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.main-nav li {
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
+
+.main-nav a {
+  display: block;
+  padding: var(--space-md);
+  color: var(--color-dark);
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  background-color: var(--color-ethereal);
+}
+
+/* ===========================
+   4. HERO
+   =========================== */
+.hero {
+  text-align: center;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.hero .tagline {
+  margin: var(--space-md) auto var(--space-lg);
+  max-width: 500px;
+  color: rgba(58, 51, 46, 0.75);
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: var(--color-mocha);
+  color: var(--color-white);
+  padding: 0.75rem 1.75rem;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+  background-color: #8f6f5a;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   5. ABOUT
+   =========================== */
+.about {
+  background-color: var(--color-grey);
+  border-radius: 12px;
+}
+
+.about p {
+  max-width: 700px;
+}
+
+/* ===========================
+   6. SKILLS (Grid)
+   =========================== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.skill-card {
+  background-color: var(--color-ethereal);
+  color: var(--color-dark);
+  text-align: center;
+  padding: var(--space-md);
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+/* ===========================
+   7. PROJECTS (Grid)
+   =========================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.project-card {
+  background-color: var(--color-white);
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 10px;
+  padding: var(--space-lg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.project-card p {
+  margin-bottom: var(--space-md);
+  color: rgba(58, 51, 46, 0.8);
+}
+
+.project-link {
+  font-weight: 500;
+  color: var(--color-mocha);
+}
+
+.project-link:hover {
+  text-decoration: underline;
+}
+
+/* ===========================
+   8. EXPERIENCE
+   =========================== */
+.experience-item {
+  background-color: var(--color-grey);
+  border-radius: 12px;
+  padding: var(--space-lg);
+}
+
+.experience-meta {
+  font-weight: 500;
+  color: var(--color-mocha);
+  margin-bottom: var(--space-sm);
+}
+
+/* ===========================
+   9. CONTACT
+   =========================== */
+.contact {
+  text-align: center;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+  margin-top: var(--space-lg);
+}
+
+.contact-list a {
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+/* ===========================
+   10. FOOTER
+   =========================== */
+.site-footer {
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: var(--color-dark);
+  color: var(--color-grey);
+  font-size: 0.9rem;
+}
+
+/* ===========================================
+   11. RESPONSIVE BREAKPOINTS (Mobile-First)
+   =========================================== */
+
+/* ---- Tablet and up: 768px ---- */
+@media (min-width: 768px) {
+
+  .nav-toggle {
+    display: none; /* hide hamburger, show full nav inline */
+  }
+
+  .main-nav {
+    display: block;
+    position: static;
+    width: auto;
+    background: none;
+  }
+
+  .main-nav ul {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+
+  .main-nav li {
+    border-top: none;
+  }
+
+  .main-nav a:hover {
+    background-color: transparent;
+    color: var(--color-mocha);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-list {
+    flex-direction: row;
+    gap: var(--space-lg);
+  }
+}
+
+/* ---- Desktop and up: 1024px ---- */
+@media (min-width: 1024px) {
+
+  .skills-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero .tagline {
+    font-size: 1.15rem;
+  }
+}
